@@ -1,47 +1,68 @@
-.timeline ul li {
-    list-style-type: none;
-    position: relative;
-    width: 6px;
-    padding-top: 50px;
-    background: rgb(182, 4, 4);
-}
-
-.timeline ul li::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: inherit;
-    z-index: 1;
-}
-
-.timeline ul li div {
-    position: relative;
-    bottom: 0;
-    width: 400px;
-    padding: 15px;
-    background: #F45B69;
-}
-
-.timeline ul li div::before {
-    content: '';
-    position: absolute;
-    bottom: 7px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-}
-
-.timeline ul li div {
-    left: 45px;
-}
-
-.timeline ul li div::before {
-    left: -15px;
-    border-width: 8px 16px 8px 0;
-    border-color: transparent #F45B69 transparent transparent;
-}
+    ol {
+        list-style-type: none;
+    }
+    
+    li {
+        position: relative;
+        margin: 0;
+        padding-bottom: 1em;
+        padding-left: 20px;
+    }
+    
+    .timeline-line {
+        border-left: 5px solid blue;
+        position: absolute;
+        margin-left: 90px;
+        z-index: -1;
+        height: 100%;
+        min-height: 100%;
+    }
+    
+    .date,
+    .event {
+        display: inline-block
+    }
+    
+    .date {
+        border-radius: 10px;
+        background-color: lightgreen;
+        width: 60px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        flex: 0 0 auto;
+        margin: 10px 10px 10px 20px;
+    }
+    
+    .event {
+        padding: 1em;
+    }
+    
+    .timeline-event {
+        margin: 10px 0;
+        margin-left: 20px;
+        padding-left: 20px;
+        z-index: 0;
+        list-style: none;
+        padding: 0;
+        border-radius: 50px;
+        transition: all 1s;
+        /*Flex for the win*/
+        display: flex;
+        align-items: center;
+    }
+    
+    .date,
+    .event {
+        display: inline-block;
+    }
+    
+    .timeline-events {
+        margin: 0 0 0 20px;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .timeline {
+        position: relative;
+    }
